@@ -75,4 +75,12 @@ void SceneMain::draw()
 	{
 		shot.draw();
 	}
+
+	// Œ»İ‘¶İ‚µ‚Ä‚¢‚é‹Ê‚Ì”‚ğ•\¦
+	int shotNum = 0;
+	for (auto& shot : m_shot)
+	{
+		if (shot.isExist()) shotNum++;
+	}
+	DrawFormatString(0, 0, GetColor(225, 225, 225), "’e‚Ì”F%d", shotNum);
 }
