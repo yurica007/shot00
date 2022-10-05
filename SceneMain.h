@@ -1,9 +1,7 @@
 #pragma once
 
 #include "player.h"
-#include "ShotNormal.h"
-#include "ShotSin.h"
-#include "ShotBound.h"
+#include "ShotBase.h"
 
 class SceneMain
 {
