@@ -143,7 +143,9 @@
     <ClCompile Include="player.cpp" />
     <ClCompile Include="SceneMain.cpp" />
     <ClCompile Include="ShotBase.cpp" />
+    <ClCompile Include="ShotBound.cpp" />
     <ClCompile Include="ShotNormal.cpp" />
+    <ClCompile Include="ShotSin.cpp" />
     <ClCompile Include="Vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +153,9 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="SceneMain.h" />
     <ClInclude Include="ShotBase.h" />
+    <ClInclude Include="ShotBound.h" />
     <ClInclude Include="ShotNormal.h" />
+    <ClInclude Include="ShotSin.h" />
     <ClInclude Include="Vec2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
