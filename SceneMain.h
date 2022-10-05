@@ -40,7 +40,7 @@ private:
 	// ƒVƒ‡ƒbƒg
 	ShotBase* m_pShot[kShotMax];
 
-	ShotNormal* m_pShotNormal[kShotMax];
-	ShotSin* m_pShotSin[kShotMax];
-	ShotBound* m_pShotBound[kShotMax];
+//	ShotNormal* m_pShotNormal[kShotMax];
+//	ShotSin* m_pShotSin[kShotMax];
+//	ShotBound* m_pShotBound[kShotMax];
 };
