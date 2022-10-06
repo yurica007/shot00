@@ -1,5 +1,6 @@
 #include "DxLib.h"
 #include "SceneMain.h"
+#include <cassert>
 
 #include "ShotNormal.h"
 #include "ShotSin.h"
@@ -40,7 +41,8 @@ void SceneMain::end()
 
 	for (auto& pShot : m_pShotVt)
 	{
-		if (!pShot) continue;
+		assert(pShot);
+
 		delete pShot;
 		pShot = nullptr;
 	}
@@ -55,12 +57,7 @@ void SceneMain::update()
 	while (it != m_pShotVt.end())
 	{
 		auto& pShot = (*it);
-
-		if (!pShot)
-		{
-			it++;
-			continue;
-		}
+		assert(pShot);
 		pShot->update();
 		if (!pShot->isExist())
 		{
@@ -82,7 +79,7 @@ void SceneMain::draw()
 
 	for (auto& pShot : m_pShotVt)
 	{
-		if (!pShot) continue;
+		assert(pShot);
 		pShot->draw();
 	}
 	
