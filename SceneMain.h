@@ -30,6 +30,8 @@ private:
 	// プレイヤーのグラフィックハンドル
 	int m_hPlayerGraphic;
 	int m_hShotGraphic;
+	// サウンドハンドル
+	int m_hTestSound;
 	// プレイヤー
 	Player m_player;
 	// ショット

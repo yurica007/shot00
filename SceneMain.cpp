@@ -16,6 +16,7 @@ SceneMain::SceneMain()
 {
 	m_hPlayerGraphic = -1;
 	m_hShotGraphic = -1;
+	m_hTestSound = -1;
 }
 SceneMain::~SceneMain()
 {
@@ -25,8 +26,11 @@ SceneMain::~SceneMain()
 // 初期化
 void SceneMain::init()
 {
+	// グラフィックのロード
 	m_hPlayerGraphic = LoadGraph("data/player.bmp");
 	m_hShotGraphic = LoadGraph("data/shot.bmp");
+	// サウンドのロード
+	m_hTestSound = LoadSoundMem("sound/cursor0.mp3");
 
 	m_player.setHandle(m_hPlayerGraphic);
 	m_player.init();
@@ -36,8 +40,11 @@ void SceneMain::init()
 // 終了処理
 void SceneMain::end()
 {
+	// グラフィックアンロード
 	DeleteGraph(m_hPlayerGraphic);
 	DeleteGraph(m_hShotGraphic);
+	// サウンドアンロード
+	DeleteSoundMem(m_hTestSound);
 
 	for (auto& pShot : m_pShotVt)
 	{
@@ -51,6 +58,12 @@ void SceneMain::end()
 // 毎フレームの処理
 void SceneMain::update()
 {
+	int padState = GetJoypadInputState(DX_INPUT_KEY_PAD1);
+	if (padState & PAD_INPUT_1)
+	{
+		PlaySoundMem(m_hTestSound, DX_PLAYTYPE_BACK, true);
+	}
+
 	m_player.update();
 
 	std::vector<ShotBase*>::iterator it = m_pShotVt.begin();
